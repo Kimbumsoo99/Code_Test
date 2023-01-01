@@ -10,7 +10,7 @@ def hello_Flask():
 
 @app.route('/')
 def index():
-    return redirect(url_for('hellso_Flask'))
+    return redirect(url_for('hello_Flask'))
 
 if __name__ == '__main__':
     app.run(debug=True)
