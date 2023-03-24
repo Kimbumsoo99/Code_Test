@@ -1,3 +1,4 @@
+# 백준 11659번
 # 합 배열 공식 S[i] = S[i-1]+A[i]
 
 # 구간 합 공식 S[j] - S[i-1]  i에서 j까지 구간 합
@@ -17,7 +18,7 @@ temp = 0
 for i in num_list:
     temp = temp+i
     prefix_sum.append(temp)
-
+print(prefix_sum)
 for i in range(m):
     s, e = map(int, input().split())
     print(prefix_sum[e]-prefix_sum[s-1])
