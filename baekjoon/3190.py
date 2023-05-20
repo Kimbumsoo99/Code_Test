@@ -1,6 +1,5 @@
 from collections import deque
 import sys
-
 input = sys.stdin.readline
 
 N = int(input())
@@ -25,14 +24,15 @@ way = 0
 row, col = 1, 1
 snake.appendleft([row, col])
 
-print(board)
-print(len(board),len(board[0]))
+# print(board)
+# print(len(board),len(board[0]))
 
 # 게임시작
 while True:
     cntTime += 1
-    print("시간 ", cntTime)
+    # print("시간 ", cntTime)
 
+    # 뱀 이동
     if way == 0:
         col += 1
     elif way == 1:
@@ -42,25 +42,36 @@ while True:
     elif way == 3:
         row -= 1
 
-    if col > len(board[0]) - 1 or col < 0 or row > len(board) - 1 or row < 0:
+    # 게임 종료 조건
+    if col > len(board[0]) - 1 or col < 1 or row > len(board) - 1 or row < 1:
         print(cntTime)
-        print("벽에 부딪혀 게임 종료")
+        # print("벽에 부딪혀 게임 종료")
         break
-    print(board[row][col])
+    if board[row][col] == 1:
+        # print("몸 부딪")
+        print(cntTime)
+        break
+    # print(board[row][col])
+
     if board[row][col] != 'A':
+        # 사과가 없으면 한 칸 이동 후 제거
+        board[row][col] = 1
         snake.appendleft([row, col])
-        print(snake.pop())
+        tail = snake.pop()
+        board[tail[0]][tail[1]] = 0
     else:
-        print("사과 발견 냠")
+        # 사과가 있으면 제거 하지 않음
+        # print("🍅사과 발견 냠")
+        board[row][col] = 1
         snake.appendleft([row, col])
 
     if cntTime in wayList.keys():
         if wayList[cntTime] == "L":
-            print("좌로 한번")
+            # print("좌로 한번")
             way = (way - 1) % 4
         elif wayList[cntTime] == "D":
-            print("우로 한번")
+            # print("우로 한번")
             way = (way + 1) % 4
-    print(board)
-    print(snake)
-    print("---------")
+    # print(board)
+    # print(snake)
+    # print("---------")
