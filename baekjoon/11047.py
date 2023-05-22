@@ -19,7 +19,7 @@ while K:
     #    break
     if K >= coin:
         count += K // coin
-        K -= (K // coin) * coin
+        K %= coin
         # K -= coin
         # count += 1
     else:
