@@ -1,8 +1,7 @@
-import sys
-input = sys.stdin.readline
+print(round(3.6))
+print(round(3.5))
+print(round(3.4))
+print(round(4.6))
+print(round(4.5))
+print(round(4.4))
 
-reg_data = list(map(str, input().split()))
-print(reg_data)
-reg_data[0] = reg_data[0].strip()
-reg_data[1] = int(reg_data[1].strip())
-print(reg_data)
