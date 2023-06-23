@@ -12,13 +12,16 @@
 # S = 0              #비우기
 # S = (1 << 21) - 1  #채우기
 
-t = int(input())
-for i in zip(*[input() for _ in range(t)]):
-    # asdasd
-    # qweqwe
-    # asdads
+# t = int(input())
+# for i in zip(*[input() for _ in range(t)]):
+#     # asdasd
+#     # qweqwe
+#     # asdads
+#     print(i)
+#     print(i[0], i[1])
+#     if t == 2:
+#         dict_tmp = dict(zip(i[0], i[1]))
+#         print(dict_tmp)
+
+for i in range(10,-1,-1):
     print(i)
-    print(i[0], i[1])
-    if t == 2:
-        dict_tmp = dict(zip(i[0], i[1]))
-        print(dict_tmp)
